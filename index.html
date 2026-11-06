@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Master Hub & Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      <span>Web Master Hub & Studio</span>
+    </div>
+    <div class="controls">
+      <select id="templateSelect" onchange="switchTemplate()" title="Select a template" aria-label="Select a template">
+        <option value="saas">Template 1: Tech SaaS Minimalist</option>
+        <option value="creative">Template 2: Creative Portfolio</option>
+        <option value="glass">Template 3: Glassmorphism Corporate</option>
+        <option value="ecommerce">Template 4: Modern E-Commerce</option>
+        <option value="fitness">Template 5: High-Energy Fitness</option>
+        <option value="dev">Template 6: Developer Portfolio</option>
+        <option value="health">Template 7: Medical & Healthcare</option>
+        <option value="bistro">Template 8: Modern Bistro & Culinary</option>
+        <option value="academy">Template 9: E-Learning Academy</option>
+        <option value="realestate">Template 10: Real Estate Showcase</option>
+      </select>
+      <button class="btn btn-secondary" onclick="downloadCurrentTemplate()">Download Code</button>
+      <button class="btn" onclick="openDonateModal()">♥ Donate</button>
+    </div>
+  </header>
+
+  <main>
+    <iframe id="previewFrame" title="Template Preview"></iframe>
+  </main>
+
+  <div class="modal-overlay" id="donateModal">
+    <div class="modal">
+      <h2>Support Open Source</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Support future template releases.</p>
+      <div class="donation-options">
+        <button class="donation-btn" onclick="selectAmount(this, 5)">$5</button>
+        <button class="donation-btn active" onclick="selectAmount(this, 15)">$15</button>
+        <button class="donation-btn" onclick="selectAmount(this, 50)">$50</button>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-secondary" onclick="closeDonateModal()">Cancel</button>
+        <button class="btn" onclick="processDonation()">Complete Donation</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

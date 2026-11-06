@@ -1,0 +1,35 @@
+:root {
+  --bg-main: #0a0a0c;
+  --panel-bg: #141418;
+  --accent-color: #10b981;
+  --accent-hover: #059669;
+  --text-main: #ffffff;
+  --text-dim: #a1a1aa;
+  --border-color: #27272a;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+body { background-color: var(--bg-main); color: var(--text-main); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+
+header { height: 60px; background: var(--panel-bg); border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; padding: 0 1.5rem; z-index: 10; }
+.brand { font-weight: 700; font-size: 1.1rem; color: var(--accent-color); display: flex; align-items: center; gap: 0.5rem; }
+.controls { display: flex; gap: 1rem; align-items: center; }
+select { background: var(--bg-main); color: var(--text-main); border: 1px solid var(--border-color); padding: 0.5rem 1rem; border-radius: 6px; outline: none; cursor: pointer; }
+
+.btn { background: var(--accent-color); color: #000; font-weight: 600; padding: 0.5rem 1rem; border-radius: 6px; border: none; cursor: pointer; transition: background 0.2s; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; }
+.btn:hover { background: var(--accent-hover); }
+.btn-secondary { background: transparent; color: var(--text-main); border: 1px solid var(--border-color); }
+.btn-secondary:hover { background: var(--border-color); }
+
+main { flex: 1; position: relative; background: #000; overflow: hidden; }
+iframe { width: 100%; height: 100%; border: none; display: block; }
+
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center; z-index: 100; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.modal { background: var(--panel-bg); border: 1px solid var(--border-color); width: 100%; max-width: 450px; border-radius: 12px; padding: 2rem; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5); }
+.modal h2 { margin-bottom: 0.5rem; }
+.modal p { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem; }
+.donation-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.5rem; }
+.donation-btn { background: var(--bg-main); border: 1px solid var(--border-color); color: var(--text-main); padding: 0.75rem; border-radius: 6px; cursor: pointer; font-weight: 600; text-align: center; }
+.donation-btn.active, .donation-btn:hover { border-color: var(--accent-color); color: var(--accent-color); }
+.modal-actions { display: flex; justify-content: flex-end; gap: 0.75rem; }
+
+@media (max-width: 640px) { .controls { gap: 0.5rem; } .brand span { display: none; } }
